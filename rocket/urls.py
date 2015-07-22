@@ -18,5 +18,6 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^$', include('main.urls')) 			#use main for the home (/) route
+    url(r'^$', include('main.urls')), 				#use main for the home (/) and global routes
+    url(r'^dashboard/', include('dashboard.urls'))	#for /dashboard/*
 ]

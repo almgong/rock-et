@@ -1,12 +1,22 @@
 <!DOCTYPE html>
 <html>
+
 	<head>
 		<title>Home</title>
+		
+		<!-- css -->
+		{% load staticfiles %}
+		<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}" />
 	</head>
 
 	<body>
-		Hello World!
-		<br/>
-		Testing: {{ status }} 
+		<div class="container">
+			Hello World!
+			<br/>
+			Testing: {{ status }} 
+			<div class="btn">
+				hey
+			</div>
+		</div>
 	</body>
 </html>
