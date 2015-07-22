@@ -1,22 +1,16 @@
-<!DOCTYPE html>
-<html>
+{% extends 'base.html' %}
 
-	<head>
-		<title>Home</title>
-		
-		<!-- css -->
-		{% load staticfiles %}
-		<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}" />
-	</head>
+{% block meta %}
+<title>Rocket - Changing Education</title>
+{% endblock meta %}
 
-	<body>
-		<div class="container">
-			Hello World!
-			<br/>
-			Testing: {{ status }} 
-			<div class="btn">
-				hey
-			</div>
-		</div>
-	</body>
-</html>
+{% block content %}
+
+	Hello World!
+	<br/>
+	Testing: {{ status }} 
+	<button class="btn">
+		hey
+	</button>
+
+{% endblock content %}
