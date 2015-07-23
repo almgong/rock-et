@@ -1,8 +1,7 @@
 /** CSS for all styles of the site **/
 $brandGray:#D7D7D7;
-$brandDarkPurple:#333366;
-$brandOrange:#CC9933;
-$brandWhite:#FAFAFA;
+$brandBlue:#1BA4FF;
+$brandWhite:white;
 $brandFontFamily: 'Cabin', sans-serif;
 
 @mixin box-shadow($one, $two, $three, $four, $color) {
@@ -20,36 +19,50 @@ html {
 
 body {
 	@extend html;
-	padding-top:70px;
+	padding-top:50px;
 }
 
 .animated-default {
 	-vendor-animation-duration: 1s;
-	-vendor-animation-delay: 1s;
+	-vendor-animation-delay: 2s;
 }
 
+.divider {
+	position:absolute;
+}
 
 /** nav **/
 .navbar-default {
-	background-color: $brandDarkPurple;
+	background-color: $brandBlue;
+	border-color: transparent;
+	@include box-shadow(1.5px, 2.598px, 14.25px, 0.75px, rgba(0, 0, 0, 0.35));
 }
 
 nav, 
 .navbar-default .navbar-brand, 
 #nav-collapse,
 .navbar-default .navbar-nav>li>a {
-	color:$brandOrange;
-}
-
-.navbar-default .navbar-nav>li>a:hover {
 	color:$brandWhite;
 }
 
 /** index/landing page **/
-.intro-section {
-	@include box-shadow(1.5px, 2.598px, 14.25px, 0.75px, rgba(0, 0, 0, 0.35));
-	background-color: $brandWhite;
+.circle-divider {
+	@extend .divider;
 }
-.intro-text {
-	font-size: 16px;
+.circle-divider div {
+	border:1px solid black;
+	border-radius:50%;
+	height:15px;
+	width:15px;
+}
+.intro-section {
+	/*@include box-shadow(1.5px, 2.598px, 14.25px, 0.75px, rgba(0, 0, 0, 0.35));*/
+	background-color: $brandWhite;
+	padding:15px;
+	min-height:400px;
+	font-size:24px;
+	color:$brandWhite;
+}
+.intro {
+	background-color:darken(#8AF1AD, 20%);
 }
