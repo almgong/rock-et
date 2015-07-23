@@ -8,7 +8,7 @@
  	function(appViews) {
  		//Wait until page load
  		$(function() {
- 			console.log('eyy in app');
+ 			console.log('Rendering landing page...');
  			appViews.renderLandingPage();
  		});
  	return {

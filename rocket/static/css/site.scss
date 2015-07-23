@@ -1,9 +1,17 @@
 /** CSS for all styles of the site **/
 $brandGray:#D7D7D7;
 $brandDarkPurple:#333366;
-
+$brandOrange:#CC9933;
+$brandWhite:#FAFAFA;
 $brandFontFamily: 'Cabin', sans-serif;
 
+@mixin box-shadow($one, $two, $three, $four, $color) {
+    -webkit-box-shadow: $one $two $three $four $color;
+    -moz-box-shadow: $one $two $three $four $color;
+    box-shadow: $one $two $three $four $color;
+}
+
+/** global **/
 html {
 	background-color:$brandGray;
 	font-family: $brandFontFamily;
@@ -15,7 +23,33 @@ body {
 	padding-top:70px;
 }
 
+.animated-default {
+	-vendor-animation-duration: 1s;
+	-vendor-animation-delay: 1s;
+}
+
+
 /** nav **/
 .navbar-default {
 	background-color: $brandDarkPurple;
+}
+
+nav, 
+.navbar-default .navbar-brand, 
+#nav-collapse,
+.navbar-default .navbar-nav>li>a {
+	color:$brandOrange;
+}
+
+.navbar-default .navbar-nav>li>a:hover {
+	color:$brandWhite;
+}
+
+/** index/landing page **/
+.intro-section {
+	@include box-shadow(1.5px, 2.598px, 14.25px, 0.75px, rgba(0, 0, 0, 0.35));
+	background-color: $brandWhite;
+}
+.intro-text {
+	font-size: 16px;
 }

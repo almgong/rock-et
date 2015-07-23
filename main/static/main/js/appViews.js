@@ -1,6 +1,7 @@
 /**
- * Module that handles view logic for landing page
- * 
+ * Module that handles view logic for landing page.
+ * Since Landing page is static, probably don't need
+ * any Backbone. This is here as a structural template.
  **/
 define([
 	'bb',
@@ -10,13 +11,15 @@ define([
 var LandingPageView = Backbone.View.extend({
 	$el:$('.landing-page-wrapper'),
 	render:function() {
-		console.log('eyy in views');
+		console.log('LP rendered.');
 	}
 });
 
-var landingPage = new LandingPageView();
+var landingPage;
 
 var renderLandingPage = function() {
+	landingPage = null;
+	landingPage = new LandingPageView();
 	landingPage.render();
 };
 

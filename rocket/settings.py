@@ -126,7 +126,7 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),           #/rocket/rocket/static
     os.path.join(BASE_DIR_ORIG, 'main/static'),
 )
-print STATICFILES_DIRS
+
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
