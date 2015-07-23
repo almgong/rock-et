@@ -5,8 +5,9 @@
  **/
 define([
 	'bb',
-	'text']
-	, function(Backbone, text) {
+	'text',
+	'waypoint']
+	, function(Backbone, text, Waypoint) {
 
 var LandingPageView = Backbone.View.extend({
 	$el:$('.landing-page-wrapper'),

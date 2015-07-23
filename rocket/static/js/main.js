@@ -1,5 +1,5 @@
 /**
- * Serves as mainly a configuration file.
+ * Serves as mainly a configuration file for libraries.
  * Main JS logic found in each app's JS files.
  **/
 
@@ -10,8 +10,9 @@ require.config({
 		'bootstrap': 'lib/bootstrap.min',
 		'bb': 'lib/backbone-min',
 		'underscore': 'lib/underscore-min',
-		'text': 'lib/text'
+		'text': 'lib/text',
+		'waypoint': 'lib/waypoint'
 	}
 });
 
-require(['bootstrap']);
+require(['bootstrap']);	//load bootstrap
