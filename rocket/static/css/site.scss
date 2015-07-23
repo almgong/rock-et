@@ -1,0 +1,21 @@
+/** CSS for all styles of the site **/
+$brandGray:#D7D7D7;
+$brandDarkPurple:#333366;
+
+$brandFontFamily: 'Cabin', sans-serif;
+
+html {
+	background-color:$brandGray;
+	font-family: $brandFontFamily;
+	font-size:14px;
+}
+
+body {
+	@extend html;
+	padding-top:70px;
+}
+
+/** nav **/
+.navbar-default {
+	background-color: $brandDarkPurple;
+}
