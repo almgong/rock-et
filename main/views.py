@@ -7,7 +7,3 @@ def index(request):
 	'''Route: <app>.com/'''
 
 	return render(request, 'main/index.html', dict(status=api.test())) #need .html extension
-
-def test(request):
-	
-	return HttpResponse("Testin success!!!")

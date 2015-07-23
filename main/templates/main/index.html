@@ -1,16 +1,23 @@
+<!-- base HTML -->
 {% extends 'base.html' %}
 
+<!-- meta/SEO tags -->
 {% block meta %}
 <title>Rocket - Changing Education</title>
 {% endblock meta %}
 
+
+<!-- main content for landing -->
 {% block content %}
 
-	Hello World!
-	<br/>
-	Testing: {{ status }} 
-	<button class="btn">
-		hey
-	</button>
+	<div class="landing-page-wrapper">
+		Backbone loads stuff here
+	</div>
 
 {% endblock content %}
+
+<!-- page-specific script -->
+{% block script %}
+{% load staticfiles %}
+<script type="text/javascript">require(['{% static "main/js/landing_page.js" %}'], function(){});</script>
+{% endblock script %}

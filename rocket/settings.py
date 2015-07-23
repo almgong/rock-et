@@ -14,6 +14,7 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR_ORIG = BASE_DIR
 
 
 # Quick-start development settings - unsuitable for production
@@ -123,8 +124,9 @@ STATIC_URL = '/static/'
 #alternate list of directories containing static files, use for GLOBAL static files
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),           #/rocket/rocket/static
+    os.path.join(BASE_DIR_ORIG, 'main/static'),
 )
-
+print STATICFILES_DIRS
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
