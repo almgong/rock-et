@@ -1,13 +1,36 @@
 /** CSS for all styles of the site **/
 $brandGray:#D7D7D7;
-$brandBlue:#1BA4FF;
+$brandBlue:darken(#1BA4FF,15%);
 $brandWhite:white;
 $brandFontFamily: 'Cabin', sans-serif;
+
+$introColor: #FFA519;
+$principlesColor: #60E052;
+$features1Color:#649DF6;
+$features2Color:#E052A5;
 
 @mixin box-shadow($one, $two, $three, $four, $color) {
     -webkit-box-shadow: $one $two $three $four $color;
     -moz-box-shadow: $one $two $three $four $color;
     box-shadow: $one $two $three $four $color;
+}
+
+@mixin lin-grad($deg, $primary, $secondary) {
+	background-color: $primary;
+	background: linear-gradient($deg, $primary, $secondary 80%);
+}
+
+@mixin transform($transformValues) {
+	-ms-transform: $transformValues; /* IE 9 */
+    -webkit-transform: $transformValues; /* Chrome, Safari, Opera */
+    transform: $transformValues;
+}
+
+@mixin transition($transVals) {
+	transition:$transVals;
+	-webkit-transition:$transVals;
+	-moz-transition:$transVals;
+	-o-transition:$transVals;
 }
 
 /** global **/
@@ -23,12 +46,28 @@ body {
 }
 
 .animated-default {
-	-vendor-animation-duration: 1s;
-	-vendor-animation-delay: 2s;
+	animation-duration: 1s;
+	animation-delay: .2s;
+}
+
+.animated-no-delay-fast {
+	animation-duration:.5s;
+	animation-delay:0s;
+}
+
+.animated-delay-lv-1 {
+	@extend .animated-default;
+	animation-delay: .5s;
 }
 
 .divider {
 	position:absolute;
+	z-index:100;
+}
+
+#base {
+	padding-right:15px;
+	padding-right:15px;
 }
 
 /** nav **/
@@ -46,23 +85,69 @@ nav,
 }
 
 /** index/landing page **/
-.circle-divider {
+.landing-page-wrapper {
+	
+}
+
+.triangle-divider {
 	@extend .divider;
+	width:100%;
+	div {
+		width:80px;
+		height:80px;
+		@include transform(rotate(45deg));
+		margin-top:-40px;
+		background-color: $introColor;
+		position:absolute;
+		right:5%;
+	}
 }
-.circle-divider div {
-	border:1px solid black;
-	border-radius:50%;
-	height:15px;
-	width:15px;
+
+.bar-divider {
+	@extend .divider;
+	width:100%;
+	background-color: lighten($brandGray, 10%);
+	@include box-shadow(1.5px, 2.598px, 14.25px, 0.75px, rgba(0, 0, 0, 0.35));
+	height:75px;
 }
+
 .intro-section {
 	/*@include box-shadow(1.5px, 2.598px, 14.25px, 0.75px, rgba(0, 0, 0, 0.35));*/
 	background-color: $brandWhite;
 	padding:15px;
-	min-height:400px;
+	padding-left:30px;
+	min-height:500px;
 	font-size:24px;
 	color:$brandWhite;
 }
+
+.principles > div,
+.features-1 > div,
+.features-2 > div,
+.intro-ending > div{
+	opacity:0;
+	@include transition(opacity 200ms ease-in)
+}
+
 .intro {
-	background-color:darken(#8AF1AD, 20%);
+	@include lin-grad(180deg, darken($introColor, 15%), $introColor);
+	padding-top:7%;
+}
+
+.principles {
+	@include lin-grad(180deg, darken($principlesColor, 15%), $principlesColor);
+	font-size:18px;
+}
+
+.features-1 {
+	@include lin-grad(180deg, darken($features1Color, 15%), $features1Color);
+	padding-top:90px; /* matches up with bar divider height + 15 from intro-section */
+}
+
+.features-2 {
+	@include lin-grad(180deg, darken($features2Color, 15%), $features2Color)
+}
+
+.intro-ending {
+	@include lin-grad(180deg, darken(#D7D7D7, 15%), #D7D7D7);
 }

@@ -11,7 +11,7 @@ require.config({
 		'bb': 'lib/backbone-min',
 		'underscore': 'lib/underscore-min',
 		'text': 'lib/text',
-		'waypoint': 'lib/waypoint'
+		'waypoint': 'lib/jquery.waypoints.min'
 	}
 });
 
