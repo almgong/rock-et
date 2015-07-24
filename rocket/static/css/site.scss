@@ -38,6 +38,7 @@ html {
 	background-color:$brandGray;
 	font-family: $brandFontFamily;
 	font-size:14px;
+	letter-spacing:1px;
 }
 
 body {
@@ -103,6 +104,23 @@ nav,
 	}
 }
 
+.divider-middle.triangle-divider {
+	div {
+		position:static;
+		margin-right:auto;
+		margin-left:auto;
+		background-color:$features1Color;
+	}
+}
+
+.divider-left.triangle-divider {
+	div {
+		right:auto;
+		left:5%;
+		background-color: $brandWhite;
+	}
+}
+
 .bar-divider {
 	@extend .divider;
 	width:100%;
@@ -121,12 +139,28 @@ nav,
 	color:$brandWhite;
 }
 
+.intro-header {
+	font-size:20px;
+	line-height:75px; /** matches height of bar divider **/
+}
+
+.intro-subheader {
+	font-size:18px;
+	text-decoration: underline;
+}
+
 .principles > div,
 .features-1 > div,
 .features-2 > div,
 .intro-ending > div{
 	opacity:0;
 	@include transition(opacity 200ms ease-in)
+}
+
+.principles,
+.features-1,
+.features-2 {
+	font-size:16px;
 }
 
 .intro {
@@ -136,7 +170,6 @@ nav,
 
 .principles {
 	@include lin-grad(180deg, darken($principlesColor, 15%), $principlesColor);
-	font-size:18px;
 }
 
 .features-1 {
@@ -146,7 +179,7 @@ nav,
 
 .features-2 {
 	/*@include lin-grad(180deg, darken($features2Color, 15%), $features2Color);*/
-	@include lin-grad(180deg, lighten($brandGray, 10%), $brandGray);
+	color:#b1b1b1;
 }
 
 .intro-ending {
