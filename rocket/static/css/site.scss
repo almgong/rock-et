@@ -146,6 +146,7 @@ nav,
 
 .features-2 {
 	/*@include lin-grad(180deg, darken($features2Color, 15%), $features2Color);*/
+	@include lin-grad(180deg, lighten($brandGray, 10%), $brandGray);
 }
 
 .intro-ending {
