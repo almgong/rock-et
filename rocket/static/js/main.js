@@ -14,5 +14,3 @@ require.config({
 		'waypoint': 'lib/jquery.waypoints.min'
 	}
 });
-
-require(['bootstrap']);	//load bootstrap

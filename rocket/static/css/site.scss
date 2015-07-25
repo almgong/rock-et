@@ -44,6 +44,7 @@ html {
 body {
 	@extend html;
 	padding-top:50px;
+	position:relative;
 }
 
 .animated-default {
@@ -54,6 +55,16 @@ body {
 .animated-no-delay-fast {
 	animation-duration:.5s;
 	animation-delay:0s;
+}
+
+.animated-delay-fast {
+	animation-duration:.5s;
+	animation-delay:.1s;
+}
+
+.animated-delay-fast-2{
+	animation-duration:.5s;
+	animation-delay:.2s;
 }
 
 .animated-delay-lv-1 {
@@ -67,7 +78,7 @@ body {
 }
 
 #base {
-	padding-right:15px;
+	padding-left:15px;
 	padding-right:15px;
 }
 
@@ -127,13 +138,14 @@ nav,
 	background-color: lighten($brandGray, 10%);
 	@include box-shadow(1.5px, 2.598px, 14.25px, 0.75px, rgba(0, 0, 0, 0.35));
 	height:75px;
+	left:0;
+	right:0;
 }
 
 .intro-section {
 	/*@include box-shadow(1.5px, 2.598px, 14.25px, 0.75px, rgba(0, 0, 0, 0.35));*/
 	background-color: $brandWhite;
 	padding:15px;
-	padding-left:30px;
 	min-height:500px;
 	font-size:24px;
 	color:$brandWhite;
@@ -179,9 +191,46 @@ nav,
 
 .features-2 {
 	/*@include lin-grad(180deg, darken($features2Color, 15%), $features2Color);*/
-	color:#b1b1b1;
+	color:darken(#b1b1b1, 20%);
 }
 
 .intro-ending {
 	@include lin-grad(180deg, darken(#D7D7D7, 15%), #D7D7D7);
+}
+
+/** dashboard **/
+.nav-middle { /*Shared with Learn as well, style for adding navigation to middle of main nav*/
+	width:60%;
+	padding-left:20%;
+	margin: 0 auto;
+	position: fixed;
+	top:0;
+	z-index: 1030;
+	.nav>li {
+		display:inline-block;
+	}
+}
+
+#dashboard-nav-inner {
+	height:50px;
+
+	.nav li a{
+		color:$brandWhite;
+		padding-top:15px;
+		padding-bottom: 15px;
+	}
+	.nav li a:hover, .active a{
+		text-decoration: underline;
+	}
+}
+
+.dashboard-body {
+	padding-top:15px; /* some space */
+}
+
+.dashboard-section {
+	min-height:400px;
+	margin-bottom:15px;
+	background-color:$brandWhite;
+	@include box-shadow(2px, 4px, 5px, 2px, rgba(0,0,0,0.48));
 }

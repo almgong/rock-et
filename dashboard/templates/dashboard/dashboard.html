@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+<title>My Dashboard</title>
+{% endblock meta %}
+
+<!-- main content for dash -->
+{% block content %}
+	<div class="dashboard-wrapper">
+
+		{% include 'dashboard/dashboard_main.template.html' %}
+
+	</div>
+{% endblock content %}
+
+<!-- page-specific script -->
+{% block script %}
+{% load staticfiles %}
+<script type="text/javascript">require(['{% static "js/lib/bootstrap.min.js"%}'], function(){require(['{% static "dashboard/js/dashboard.js" %}'], function(){});});</script>
+{% endblock script %}
