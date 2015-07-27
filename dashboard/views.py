@@ -18,10 +18,3 @@ def index(request):
 
 
 # Pseudo-restAPI -- perhaps leave API stuff alone and use mock client-side data until tastypi
-
-def get_user(request):
-	'''GET a user given a username'''
-
-	print 'in get_user ' + str(request.GET.get('token', None))
-	
-	return HttpResponse(api.getUser(request.GET.get('token', None)))

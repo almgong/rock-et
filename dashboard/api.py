@@ -1,6 +1,6 @@
 #api for dashboard
 
-def getUser(token):
+def getUserTest(token):
 
 	### code that accesses db and gets a user + info ###
 	return {

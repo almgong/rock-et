@@ -1,10 +1,15 @@
 //appviews for dashboard
-define(['bb', 'text'], function(Backbone, txt) {
+define([
+	'bb', 
+	'text',
+	'text!/static/dashboard/bb_templates/dashboard_progress_template.html'
+	], function(Backbone, txt, progressHTML) {
 
 	var ProgressView = Backbone.View.extend({
-		$el: $('#progress'),
+		el: $('#progress'),
 		render:function() {
-			console.log('rendering Progress');
+			var self = this;
+			console.log('rendering Progress - mock ajax call');
 			/*$.ajax({
 				url:'/dashboard/get_user',
 				method:'GET',
@@ -17,6 +22,11 @@ define(['bb', 'text'], function(Backbone, txt) {
 
 				}
 			});*/ //uncomment when tastypi implemented, for now, just use mock data in JSON format
+
+			//pretend API call returned success
+			var temp = _.template(progressHTML);
+			self.$el.html(temp({'data':'yay'}));
+
 		}
 	});
 
@@ -26,7 +36,7 @@ define(['bb', 'text'], function(Backbone, txt) {
 	var account;
 	var renderDashboard = function() {
 		//skeletal function that renders ALL parts of dashboard
-		progress=null;
+		progress = null;
 		progress = new ProgressView();
 		progress.render();
 	};
