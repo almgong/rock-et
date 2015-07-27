@@ -2,7 +2,7 @@
 define([
 	'bb', 
 	'text',
-	'text!/static/dashboard/bb_templates/dashboard_progress_template.html'
+	'text!/static/dashboard/bb_templates/dashboard.progress.template.html'
 	], function(Backbone, txt, progressHTML) {
 
 	var ProgressView = Backbone.View.extend({
